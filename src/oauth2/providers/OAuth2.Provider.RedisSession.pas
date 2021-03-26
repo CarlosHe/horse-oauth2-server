@@ -24,11 +24,11 @@ implementation
 
 uses
   System.SysUtils,
-  RedisConnection.Provider,
+  Redis.Connection,
   Redis.Config,
   Redis.Commons,
   Redis.Values,
-  GUIDGenerator.Provider;
+  GUIDGenerator;
 
 const
 
@@ -38,14 +38,14 @@ const
 
 class function TOAuth2RedisSessionProvider.NewSession: string;
 begin
-  Result := TGUIDGeneratorProvider.New.SetWithoutBraces.Generate;
+  Result := TGUIDGenerator.New.SetWithoutBraces.Generate;
 end;
 
 class procedure TOAuth2RedisSessionProvider.Forgot(AKey: string);
 var
   LRedis: IRedisClient;
 begin
-  LRedis := TRedisConnectionProvider.NewConnection;
+  LRedis := TRedisConnection.NewConnection;
   LRedis.Connect;
   LRedis.DEL([Format(REDIS_SESSION_KEY, [AKey])])
 end;
@@ -57,7 +57,7 @@ var
   LJSONObjectSession: TJSONObject;
 begin
   LJSONObjectSession := nil;
-  LRedis := TRedisConnectionProvider.NewConnection;
+  LRedis := TRedisConnection.NewConnection;
   try
     LRedis.Connect;
     LRedisString := LRedis.GET(Format(REDIS_SESSION_KEY, [AKey]));
@@ -72,7 +72,7 @@ class procedure TOAuth2RedisSessionProvider.SetSession(AKey: string; AJSONObject
 var
   LRedis: IRedisClient;
 begin
-  LRedis := TRedisConnectionProvider.NewConnection;
+  LRedis := TRedisConnection.NewConnection;
   LRedis.Connect;
   LRedis.&SET(Format(REDIS_SESSION_KEY, [AKey]), AJSONObject.ToString, ASecsExpire);
 end;

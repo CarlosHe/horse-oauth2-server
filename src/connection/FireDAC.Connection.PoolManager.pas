@@ -3,7 +3,7 @@ unit FireDAC.Connection.PoolManager;
 interface
 
 uses
-  PoolManager.Provider,
+  PoolManager,
   FireDAC.Stan.Intf,
   FireDAC.Stan.Option,
   FireDAC.Stan.Error,

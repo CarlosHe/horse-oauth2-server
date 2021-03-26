@@ -18,8 +18,7 @@ uses
   Ready.Controller in 'src\controllers\Ready.Controller.pas',
   Server.Consts in 'src\consts\Server.Consts.pas',
   OAuth2.Provider.RedisSession in 'src\oauth2\providers\OAuth2.Provider.RedisSession.pas',
-  RedisConnection.Provider in 'src\providers\RedisConnection.Provider.pas',
-  GUIDGenerator.Provider in 'src\providers\GUIDGenerator.Provider.pas',
+  Redis.Connection in 'src\connection\Redis.Connection.pas',
   Database.Config in 'src\configs\Database.Config.pas',
   Redis.Config in 'src\configs\Redis.Config.pas',
   ServerPort.Config in 'src\configs\ServerPort.Config.pas',
@@ -40,7 +39,6 @@ uses
   OAuth2.Middleware.AuthorizationServer in 'src\oauth2\middlewares\OAuth2.Middleware.AuthorizationServer.pas',
   OAuth2.Repository.User in 'src\oauth2\repositories\OAuth2.Repository.User.pas',
   OAuth2.Service.Client in 'src\oauth2\services\OAuth2.Service.Client.pas',
-  PoolManager.Provider in 'src\providers\PoolManager.Provider.pas',
   FireDAC.Connection.PoolManager in 'src\connection\FireDAC.Connection.PoolManager.pas',
   OAuth2.Service.User in 'src\oauth2\services\OAuth2.Service.User.pas',
   OAuth2.Service.Scope in 'src\oauth2\services\OAuth2.Service.Scope.pas',
@@ -55,7 +53,9 @@ uses
   OAuth2.Static.Login in 'src\oauth2\statics\OAuth2.Static.Login.pas',
   OAuth2.Static.Auth in 'src\oauth2\statics\OAuth2.Static.Auth.pas',
   OAuth2.Config.Server in 'src\oauth2\configs\OAuth2.Config.Server.pas',
-  OAuth2.Config.LoginProxy in 'src\oauth2\configs\OAuth2.Config.LoginProxy.pas';
+  OAuth2.Config.LoginProxy in 'src\oauth2\configs\OAuth2.Config.LoginProxy.pas',
+  Horse.HealthCheck.Database in 'src\health-checkers\Horse.HealthCheck.Database.pas',
+  Horse.HealthCheck.Redis in 'src\health-checkers\Horse.HealthCheck.Redis.pas';
 
 begin
   TDataSetSerializeConfig.GetInstance.CaseNameDefinition := cndLower;
@@ -68,6 +68,8 @@ begin
     );
 
   THorseHealthCheckManager
+    .AddCheck<THorseHealthCheckDatabase>('database')
+    .AddCheck<THorseHealthCheckRedis>('redis')
     .AddCheck<THorseHealthCheckPing>('ping');
 
   THorse

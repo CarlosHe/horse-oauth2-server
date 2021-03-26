@@ -10,6 +10,14 @@
 			"failed": false,
 			"changed": false
 		},
+		"github.com/carloshe/guid-generator": {
+			"name": "guid-generator",
+			"version": "1.0.0",
+			"hash": "cb3d28271df6d15ea687b0c5b938fb6d",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"github.com/carloshe/horse-healthcheck": {
 			"name": "horse-healthcheck",
 			"version": "1.0.1",
@@ -22,6 +30,14 @@
 			"name": "oauth2-server",
 			"version": "1.0.0",
 			"hash": "739c9f42a62b79945ea44a9a0244b16b",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/carloshe/pool-manager": {
+			"name": "pool-manager",
+			"version": "1.0.0",
+			"hash": "a093b26c85c6ef871d309f50851ba53b",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
@@ -93,7 +109,7 @@
 		"github.com/paolo-rossi/delphi-jose-jwt": {
 			"name": "delphi-jose-jwt",
 			"version": "v3.0.0",
-			"hash": "e07d23afdc06adef34b7fbbabd97ce83",
+			"hash": "997948a1bad31fd62b9c1a0d21ea93fa",
 			"artifacts": {},
 			"failed": false,
 			"changed": false

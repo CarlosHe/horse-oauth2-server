@@ -1,4 +1,4 @@
-unit RedisConnection.Provider;
+unit Redis.Connection;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   Redis.Commons;
 
 type
-  TRedisConnectionProvider = class
+  TRedisConnection = class
   private
     { private declarations }
   protected
@@ -26,7 +26,7 @@ uses
 
 { TRedisConnectionProvider }
 
-class function TRedisConnectionProvider.NewConnection: IRedisClient;
+class function TRedisConnection.NewConnection: IRedisClient;
 begin
   Result := TRedisClient.Create(TRedisConfig.Host, TRedisConfig.Port);
 end;

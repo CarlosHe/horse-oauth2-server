@@ -37,7 +37,7 @@ class procedure THorseOAuth2Routers.Register;
 begin
   THorse
     .Use(TOAuth2MiddlewareServerException.Invoke)
-    .Group.Prefix('/oauth')
+    .Group.Prefix('/oauth2')
     .Post('/login', TOAuth2LoginProxyController.Login)
     .Get('/login', TOAuth2LoginProxyController.Page)
     .Get('/authorize', TOAuth2MiddlewareCookieToken.Invoke, TOAuth2AuthorizationController.Authorize)

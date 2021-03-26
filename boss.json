@@ -6,8 +6,10 @@
 	"mainsrc": "./src/",
 	"projects": [],
 	"dependencies": {
+		"github.com/carloshe/guid-generator": "^1.0.0",
 		"github.com/carloshe/horse-healthcheck": "^1.0.1",
 		"github.com/carloshe/oauth2-server": "^1.0.0",
+		"github.com/carloshe/pool-manager": "^1.0.0",
 		"github.com/danieleteti/delphiredisclient": "^v2.1",
 		"github.com/hashload/horse": "^2.0.12",
 		"github.com/hashload/horse-cors": "^1.0.3",
