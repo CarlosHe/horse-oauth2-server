@@ -1,0 +1,118 @@
+{
+	"hash": "4fc98058402d9d0b708fa97a5bac3c2d",
+	"updated": "2021-03-25T20:55:20.692648-03:00",
+	"installedModules": {
+		"github.com/carloshe/delphi-openssl": {
+			"name": "delphi-openssl",
+			"version": "1.0.4",
+			"hash": "2c14bf5c9426817d995df3142362b779",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/carloshe/horse-healthcheck": {
+			"name": "horse-healthcheck",
+			"version": "1.0.1",
+			"hash": "4e098ebbbd9f4839bf0608518bbcebf2",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/carloshe/oauth2-server": {
+			"name": "oauth2-server",
+			"version": "1.0.0",
+			"hash": "739c9f42a62b79945ea44a9a0244b16b",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/danieleteti/delphiredisclient": {
+			"name": "delphiredisclient",
+			"version": "v2.1",
+			"hash": "909e3e5ff941d5cb579b0492b1717122",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/dliocode/horse-utils-clientip": {
+			"name": "horse-utils-clientip",
+			"version": "0.0.6",
+			"hash": "db4c16721abe55f9f8c42c7990101361",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse": {
+			"name": "horse",
+			"version": "2.0.13",
+			"hash": "985da2054d3c705bc211797c653e47ba",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-cors": {
+			"name": "horse-cors",
+			"version": "1.0.3",
+			"hash": "248f37dd844f5a4c4ff78364e5a86027",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-logger": {
+			"name": "horse-logger",
+			"version": "2.0.2",
+			"hash": "bfb121c6e85b5cfeedbd445c962a3fed",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-logger-provider-console": {
+			"name": "horse-logger-provider-console",
+			"version": "1.0.3",
+			"hash": "59ed31ebb80012c6f8a2d4d45744d1c5",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/jhonson": {
+			"name": "jhonson",
+			"version": "1.1.1",
+			"hash": "5740da7df1068b882117a68df8098c9a",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/ragna": {
+			"name": "ragna",
+			"version": "3.2.2",
+			"hash": "4c0a9de8137c679e607bd626e0a1300c",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/paolo-rossi/delphi-jose-jwt": {
+			"name": "delphi-jose-jwt",
+			"version": "v3.0.0",
+			"hash": "e07d23afdc06adef34b7fbbabd97ce83",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/viniciussanchez/bcrypt": {
+			"name": "bcrypt",
+			"version": "1.0.3",
+			"hash": "04e8230fbb4d3e6080dc8fb73728babd",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/viniciussanchez/dataset-serialize": {
+			"name": "dataset-serialize",
+			"version": "v2.2.9",
+			"hash": "4141c40e2906a59ed5aacd74bbd5499f",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
