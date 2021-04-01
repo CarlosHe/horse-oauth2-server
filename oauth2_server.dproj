@@ -5,8 +5,8 @@
         <FrameworkType>None</FrameworkType>
         <MainSource>oauth2_server.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Linux64</Platform>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>129</TargetedPlatforms>
         <AppType>Console</AppType>
     </PropertyGroup>
@@ -91,7 +91,7 @@
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>oauth2_server</SanitizedProjectName>
-        <DCC_UnitSearchPath>$(DCC_UnitSearchPath);modules\.dcp;modules\.dcu;modules;modules\bcrypt\samples\src;modules\bcrypt\src;modules\dataset-serialize\src;modules\delphi-jose-jwt\Samples\Basic;modules\delphi-jose-jwt\Samples\Console;modules\delphi-jose-jwt\Samples\CryptoTest;modules\delphi-jose-jwt\Samples\CustomClaims;modules\delphi-jose-jwt\Source\Common;modules\delphi-jose-jwt\Source\JOSE;modules\delphi-jose-jwt\Tests\Source;modules\delphi-openssl\Source;modules\delphiredisclient\samples\02JobQueue;modules\delphiredisclient\samples\03PubSub;modules\delphiredisclient\samples\04Streams;modules\delphiredisclient\samples\10CacheForClientServerSystems;modules\delphiredisclient\samples\99FireMonkeySample;modules\delphiredisclient\samples\Commons;modules\delphiredisclient\sources;modules\delphiredisclient\tests;modules\guid-generator\src;modules\horse\src;modules\horse-cors\src;modules\horse-healthcheck\src;modules\horse-logger\src;modules\horse-logger-provider-console\src;modules\horse-utils-clientip\src;modules\jhonson\src;modules\oauth2-server\src;modules\oauth2-server\src\authorization-validators;modules\oauth2-server\src\code-challenge-verifiers;modules\oauth2-server\src\entities;modules\oauth2-server\src\entities\concrets;modules\oauth2-server\src\exception;modules\oauth2-server\src\grant;modules\oauth2-server\src\providers;modules\oauth2-server\src\repositories;modules\oauth2-server\src\request-type;modules\oauth2-server\src\response-type;modules\pool-manager\src;modules\ragna\src\core;modules\ragna\src\helpers;modules\ragna\src\interfaces;modules\ragna\src\state;modules\ragna\src\types</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\bcrypt\samples\src;modules\bcrypt\src;modules\dataset-serialize\src;modules\delphi-jose-jwt\Source\Common;modules\delphi-jose-jwt\Source\JOSE;modules\delphi-openssl\Source;modules\delphiredisclient\samples\02JobQueue;modules\delphiredisclient\samples\03PubSub;modules\delphiredisclient\samples\04Streams;modules\delphiredisclient\samples\10CacheForClientServerSystems;modules\delphiredisclient\samples\99FireMonkeySample;modules\delphiredisclient\samples\Commons;modules\delphiredisclient\sources;modules\delphiredisclient\tests;modules\guid-generator\src;modules\horse\src;modules\horse-basic-auth\src;modules\horse-cors\src;modules\horse-healthcheck\src;modules\horse-logger\src;modules\horse-logger-provider-console\src;modules\horse-utils-clientip\src;modules\jhonson\src;modules\oauth2-server\src;modules\oauth2-server\src\authorization-validators;modules\oauth2-server\src\code-challenge-verifiers;modules\oauth2-server\src\entities;modules\oauth2-server\src\entities\concrets;modules\oauth2-server\src\exception;modules\oauth2-server\src\grant;modules\oauth2-server\src\providers;modules\oauth2-server\src\repositories;modules\oauth2-server\src\request-type;modules\oauth2-server\src\response-type;modules\pool-manager\src;modules\ragna\src\core;modules\ragna\src\helpers;modules\ragna\src\interfaces;modules\ragna\src\state;modules\ragna\src\types;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;emsclientfiredac;tethering;DataSnapFireDAC;bindcompfmx;Hermes;fmx;FireDACIBDriver;FiremonkeyNetworkState;FireDACDBXDriver;dbexpress;IndyCore;dsnap;emsclient;DataSnapCommon;FireDACCommon;RESTBackendComponents;soapserver;bindengine;CloudService;FireDACCommonDriver;DataSnapClient;inet;IndyIPCommon;bindcompdbx;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;MaterialDesign;FireDACSqliteDriver;soaprtl;DbxCommonDriver;xmlrtl;soapmidas;DataSnapNativeClient;FireDACDSDriver;rtl;DbxClientDriver;CustomIPTransport;bindcomp;fgx;IndyIPClient;GridSystem;dbxcds;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;WindowsToast;$(DCC_UsePackage)</DCC_UsePackage>
@@ -139,7 +139,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
         <DCC_UsePackage>RESTComponents;emsclientfiredac;DataSnapFireDAC;FireDACADSDriver;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;inetdb;emsedge;Hermes;fmx;FireDACIBDriver;dbexpress;IndyCore;dsnap;emsclient;DataSnapCommon;FireDACCommon;RESTBackendComponents;DataSnapConnectors;soapserver;bindengine;CloudService;FireDACOracleDriver;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;IndySystem;FireDACDb2Driver;FireDACInfxDriver;FireDAC;emshosting;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;FireDACTDataDriver;soaprtl;DbxCommonDriver;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;rtl;emsserverresource;DbxClientDriver;CustomIPTransport;bindcomp;dbxcds;FireDACODBCDriver;DataSnapIndy10ServerTransport;dsnapxml;dbrtl;IndyProtocols;FireDACMongoDBDriver;DataSnapServerMidas;$(DCC_UsePackage)</DCC_UsePackage>
-        <Debugger_Launcher>/usr/bin/xterm -e "%debuggee%"</Debugger_Launcher>
+        <Debugger_Launcher>/usr/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
         <Manifest_File>(None)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSX64)'!=''">
@@ -172,12 +172,12 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Linux64)'!=''">
         <Debugger_DebugSourcePath>E:\Projects\horse-oauth2\modules\delphi-jose-jwt\Source\Common\;C:\Program Files (x86)\Embarcadero\Studio\21.0\source\Indy10\Protocols\;I:\Projects\horse-oauth2\modules\delphi-openssl\Source\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
-        <Debugger_Launcher>/usr/bin/xterm -e "%debuggee%"</Debugger_Launcher>
+        <Debugger_Launcher>/usr/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <Debugger_IncludeSystemVars>true</Debugger_IncludeSystemVars>
-        <Debugger_EnvVars>REDIS_HOST=localhost;DB_DRIVER=PG;DB_HOST=localhost;DB_PORT=5432;DB_DATABASE=kanbana;DB_USER=postgres;DB_PASSWORD=postgres;PORT=9001;$(Debugger_EnvVars)</Debugger_EnvVars>
+        <Debugger_EnvVars>REDIS_HOST=localhost;DB_DRIVER=PG;DB_HOST=localhost;DB_PORT=5432;DB_DATABASE=oauth2;DB_USER=postgres;DB_PASSWORD=postgres;PORT=9001;$(Debugger_EnvVars)</Debugger_EnvVars>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
     </PropertyGroup>
@@ -188,7 +188,7 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Linux64)'!=''">
-        <Debugger_Launcher>/usr/bin/xterm -e "%debuggee%"</Debugger_Launcher>
+        <Debugger_Launcher>/usr/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
         <DCC_Define>HORSE_DAEMON;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <ItemGroup>
@@ -196,13 +196,13 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="src\health-checkers\Horse.HealthCheck.Ping.pas"/>
-        <DCCReference Include="src\controllers\Ready.Controller.pas"/>
+        <DCCReference Include="src\controllers\Controller.Ready.pas"/>
         <DCCReference Include="src\consts\Server.Consts.pas"/>
         <DCCReference Include="src\oauth2\providers\OAuth2.Provider.RedisSession.pas"/>
-        <DCCReference Include="src\connection\Redis.Connection.pas"/>
-        <DCCReference Include="src\configs\Database.Config.pas"/>
-        <DCCReference Include="src\configs\Redis.Config.pas"/>
-        <DCCReference Include="src\configs\ServerPort.Config.pas"/>
+        <DCCReference Include="src\connection\Connection.Redis.pas"/>
+        <DCCReference Include="src\configs\Config.Database.pas"/>
+        <DCCReference Include="src\configs\Config.Redis.pas"/>
+        <DCCReference Include="src\configs\Config.ServerPort.pas"/>
         <DCCReference Include="src\oauth2\Horse.OAuth2.Singleton.pas"/>
         <DCCReference Include="src\oauth2\repositories\OAuth2.Repository.Client.pas"/>
         <DCCReference Include="src\oauth2\repositories\OAuth2.Repository.AccessToken.pas"/>
@@ -220,7 +220,7 @@
         <DCCReference Include="src\oauth2\middlewares\OAuth2.Middleware.AuthorizationServer.pas"/>
         <DCCReference Include="src\oauth2\repositories\OAuth2.Repository.User.pas"/>
         <DCCReference Include="src\oauth2\services\OAuth2.Service.Client.pas"/>
-        <DCCReference Include="src\connection\FireDAC.Connection.PoolManager.pas"/>
+        <DCCReference Include="src\connection\Connection.FireDAC.PoolManager.pas"/>
         <DCCReference Include="src\oauth2\services\OAuth2.Service.User.pas"/>
         <DCCReference Include="src\oauth2\services\OAuth2.Service.Scope.pas"/>
         <DCCReference Include="src\oauth2\services\OAuth2.Service.Token.pas"/>
@@ -237,6 +237,7 @@
         <DCCReference Include="src\oauth2\configs\OAuth2.Config.LoginProxy.pas"/>
         <DCCReference Include="src\health-checkers\Horse.HealthCheck.Database.pas"/>
         <DCCReference Include="src\health-checkers\Horse.HealthCheck.Redis.pas"/>
+        <DCCReference Include="src\oauth2\configs\OAuth2.Config.Introspect.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -292,12 +293,6 @@
                 </DeployFile>
                 <DeployFile LocalName="All Platforms\Debug\oauth2_server" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="All Platforms">
-                        <RemoteName>oauth2_server</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Linux64\Release\oauth2_server" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Linux64">
                         <RemoteName>oauth2_server</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>

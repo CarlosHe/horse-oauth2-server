@@ -19,7 +19,7 @@ uses
   System.SysUtils,
   FireDAC.Comp.Client,
   FireDAC.Stan.Param,
-  FireDAC.Connection.PoolManager;
+  Connection.FireDAC.PoolManager;
 
 const
   HEALTH_CHECKER_DESCRIPTION = 'database connection checker';

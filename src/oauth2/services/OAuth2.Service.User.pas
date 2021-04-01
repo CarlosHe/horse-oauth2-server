@@ -34,7 +34,7 @@ uses
   FireDAC.Comp.Client,
   Ragna,
   BCrypt,
-  FireDAC.Connection.PoolManager,
+  Connection.FireDAC.PoolManager,
   System.SysUtils;
 
 { TOAuth2UserService }

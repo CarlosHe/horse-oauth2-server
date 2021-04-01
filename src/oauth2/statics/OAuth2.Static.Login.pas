@@ -120,7 +120,7 @@ const
     '                             <Typography component="h1" variant="h5">'#10 +
     '                             Sign in'#10 +
     '                             </Typography>'#10 +
-    '                             <form method="post" action="/oauth/login" className={classes.form} noValidate>'#10 +
+    '                             <form method="post" action="/oauth2/login" className={classes.form} noValidate>'#10 +
     '                             <input type="hidden" autoComplete="false" name="next" value="%NEXT%" />'#10 +
     '                             <input type="hidden" autoComplete="false" name="auth_token" value="%AUTH_TOKEN%" />'#10 +
     '                             <TextField'#10 +

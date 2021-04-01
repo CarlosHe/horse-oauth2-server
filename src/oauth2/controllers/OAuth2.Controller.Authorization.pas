@@ -20,7 +20,9 @@ type
     class function ContainsScopesInArray(AScopesL: TArray<string>; AScopesR: TArray<string>): Boolean;
   public
     { public declarations }
+    class function IntrospectBasicAuth(const AUsername, APassword: string): Boolean;
     class procedure Authorize(AReq: THorseRequest; ARes: THorseResponse; ANext: TNextProc);
+    class procedure Introspect(AReq: THorseRequest; ARes: THorseResponse; ANext: TNextProc);
   end;
 
 implementation
@@ -33,6 +35,7 @@ uses
   System.SysUtils,
   System.Classes,
   System.JSON,
+  System.RegularExpressions,
   Data.DB,
   OAuth2.Static.Auth,
   OAuth2.Provider.RedisSession,
@@ -40,7 +43,12 @@ uses
   OAuth2.Service.Client,
   OAuth2.Service.Scope,
   OAuth2.Entity.User,
-  OAuth2.Config.Server;
+  OAuth2.Config.Server,
+  OAuth2.Config.Introspect,
+  OAuth2.BearerTokenValidator,
+  OAuth2.Exception.ServerException,
+  JOSE.Context,
+  JOSE.Core.JWT;
 
 { TOAuth2AuthorizationController }
 
@@ -141,6 +149,50 @@ begin
     if not Result then
       Break;
   end;
+end;
+
+class procedure TOAuth2AuthorizationController.Introspect(AReq: THorseRequest; ARes: THorseResponse; ANext: TNextProc);
+var
+  LActive: Boolean;
+  LJSONObjectIntrospect: TJSONObject;
+  LToken: string;
+  LOAuth2BearerTokenValidator: TOAuth2BearerTokenValidator;
+  LJWTContext: TJOSEContext;
+  I: Integer;
+begin
+  LActive := True;
+  LOAuth2BearerTokenValidator := TOAuth2BearerTokenValidator.Create(THorseOAuth2.DefaultOAuth2AccessTokenRepository);
+  try
+    LOAuth2BearerTokenValidator.SetPublicKey(THorseOAuth2.DefaultPublicKey);
+    try
+      if not AReq.ContentFields.ContainsKey('token') then
+        raise EOAuth2ServerException.AccessDenied('Token field not found');
+      LToken := AReq.ContentFields['token'];
+      LOAuth2BearerTokenValidator.ValidateBearerToken(LToken);
+    except
+      LActive := False;
+    end;
+  finally
+    LOAuth2BearerTokenValidator.Free;
+  end;
+  LJSONObjectIntrospect := TJSONObject.Create;
+  LJSONObjectIntrospect.AddPair('active', TJSONBool.Create(LActive));
+  if LActive then
+  begin
+    LJWTContext := TJOSEContext.Create(LToken, TJWTClaims);
+    try
+      for I := 0 to Pred(LJWTContext.GetClaims.JSON.Count) do
+        LJSONObjectIntrospect.AddPair(LJWTContext.GetClaims.JSON.Pairs[I].Clone as TJSONPair);
+    finally
+      LJWTContext.Free;
+    end;
+  end;
+  ARes.Send<TJSONObject>(LJSONObjectIntrospect);
+end;
+
+class function TOAuth2AuthorizationController.IntrospectBasicAuth(const AUsername, APassword: string): Boolean;
+begin
+  Result := AUsername.Equals(TOAuth2IntrospectConfig.User) and APassword.Equals(TOAuth2IntrospectConfig.Password);
 end;
 
 class function TOAuth2AuthorizationController.ParseScopes(AAuthRequest: TOAuth2AuthorizationRequest): TArray<string>;

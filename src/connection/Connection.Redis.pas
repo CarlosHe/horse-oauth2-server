@@ -1,4 +1,4 @@
-unit Redis.Connection;
+unit Connection.Redis;
 
 interface
 
@@ -20,7 +20,7 @@ type
 implementation
 
 uses
-  Redis.Config,
+  Config.Redis,
   Redis.Client,
   Redis.NetLib.INDY;
 

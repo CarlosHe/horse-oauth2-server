@@ -12,6 +12,7 @@
 		"github.com/carloshe/pool-manager": "^1.0.0",
 		"github.com/danieleteti/delphiredisclient": "^v2.1",
 		"github.com/hashload/horse": "^2.0.12",
+		"github.com/hashload/horse-basic-auth": "^v1.1.4",
 		"github.com/hashload/horse-cors": "^1.0.3",
 		"github.com/hashload/horse-logger": "^2.0.2",
 		"github.com/hashload/horse-logger-provider-console": "^1.0.3",

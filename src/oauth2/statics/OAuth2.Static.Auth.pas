@@ -135,7 +135,7 @@ const
     '                                 <strong>%APP_NAME%</strong> is requesting permission to access your account.'#10 +
     '                             </Typography>'#10 +
     '%SCOPES_FRAGMENT%'#10+
-    '                             <form method="post" action="/oauth/read" className={classes.form} noValidate>'#10 +
+    '                             <form method="post" action="/oauth2/read" className={classes.form} noValidate>'#10 +
     '                                 <input type="hidden" autoComplete="false" name="state" value="%STATE%" />'#10 +
     '                                 <input type="hidden" autoComplete="false" name="next" value="%NEXT%" />'#10 +
     '                                 <input type="hidden" autoComplete="false" name="auth_token" value="%AUTH_TOKEN%" />'#10 +

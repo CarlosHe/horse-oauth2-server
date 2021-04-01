@@ -11,14 +11,14 @@ type
     { protected declarations }
   public
     { public declarations }
-    class
-      procedure Register;
+    class procedure Register;
   end;
 
 implementation
 
 uses
   Horse,
+  Horse.BasicAuthentication,
   OAuth2.Controller.Authorization,
   OAuth2.Controller.ReadAuthorization,
   OAuth2.Controller.AccessToken,
@@ -48,8 +48,8 @@ begin
     .Get('/clients', TOAuth2MiddlewareResourceServer.Invoke, TOAuth2ClientController.ForUser)
     .Post('/clients', TOAuth2MiddlewareResourceServer.Invoke, TOAuth2ClientController.Store)
     .Put('/clients/:client_id', TOAuth2MiddlewareResourceServer.Invoke, TOAuth2ClientController.Update)
-    .Delete('/clients/:client_id', TOAuth2MiddlewareResourceServer.Invoke, TOAuth2ClientController.Delete);
-
+    .Delete('/clients/:client_id', TOAuth2MiddlewareResourceServer.Invoke, TOAuth2ClientController.Delete)
+    .Post('/introspect', HorseBasicAuthentication(TOAuth2AuthorizationController.IntrospectBasicAuth), TOAuth2AuthorizationController.Introspect);
 end;
 
 end.

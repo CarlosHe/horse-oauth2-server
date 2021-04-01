@@ -38,7 +38,7 @@ begin
   LRecord := TOAuth2UserService.FindAndValidateForPassport(AUsername, APassword);
   try
     if LRecord <> nil then
-      Result := TOAuth2UserEntity.New(LRecord.FieldByName('id').AsString.Trim(['{', '}']));
+      Result := TOAuth2UserEntity.New(LRecord.FieldByName('id').AsString);
   finally
     LRecord.Free;
   end;

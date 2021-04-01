@@ -24,8 +24,8 @@ implementation
 
 uses
   System.SysUtils,
-  Redis.Connection,
-  Redis.Config,
+  Connection.Redis,
+  Config.Redis,
   Redis.Commons,
   Redis.Values,
   GUIDGenerator;

@@ -28,8 +28,8 @@
 		},
 		"github.com/carloshe/oauth2-server": {
 			"name": "oauth2-server",
-			"version": "1.0.0",
-			"hash": "739c9f42a62b79945ea44a9a0244b16b",
+			"version": "1.0.1",
+			"hash": "551caddf698e8472b31a8995ecb1b177",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
@@ -62,6 +62,14 @@
 			"name": "horse",
 			"version": "2.0.13",
 			"hash": "985da2054d3c705bc211797c653e47ba",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-basic-auth": {
+			"name": "horse-basic-auth",
+			"version": "v1.1.4",
+			"hash": "55fc41c92a7e54292d843b18e0684557",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
@@ -108,8 +116,8 @@
 		},
 		"github.com/paolo-rossi/delphi-jose-jwt": {
 			"name": "delphi-jose-jwt",
-			"version": "v3.0.0",
-			"hash": "997948a1bad31fd62b9c1a0d21ea93fa",
+			"version": "v3.0.1",
+			"hash": "d6f80757be6da8206ab07ca06f23c6d0",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
@@ -124,8 +132,8 @@
 		},
 		"github.com/viniciussanchez/dataset-serialize": {
 			"name": "dataset-serialize",
-			"version": "v2.2.9",
-			"hash": "4141c40e2906a59ed5aacd74bbd5499f",
+			"version": "v2.3.0",
+			"hash": "916555f057218c63d26c06a3c0bd12f4",
 			"artifacts": {},
 			"failed": false,
 			"changed": false

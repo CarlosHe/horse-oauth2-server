@@ -18,7 +18,7 @@ implementation
 uses
   System.SysUtils,
   Redis.Commons,
-  Redis.Connection;
+  Connection.Redis;
 
 const
   HEALTH_CHECKER_DESCRIPTION = 'redis connection checker';

@@ -1,4 +1,4 @@
-unit Redis.Config;
+unit Config.Redis;
 
 interface
 

@@ -15,13 +15,13 @@ uses
   Horse.Jhonson,
   Horse.HealthCheck,
   Horse.HealthCheck.Ping in 'src\health-checkers\Horse.HealthCheck.Ping.pas',
-  Ready.Controller in 'src\controllers\Ready.Controller.pas',
+  Controller.Ready in 'src\controllers\Controller.Ready.pas',
   Server.Consts in 'src\consts\Server.Consts.pas',
   OAuth2.Provider.RedisSession in 'src\oauth2\providers\OAuth2.Provider.RedisSession.pas',
-  Redis.Connection in 'src\connection\Redis.Connection.pas',
-  Database.Config in 'src\configs\Database.Config.pas',
-  Redis.Config in 'src\configs\Redis.Config.pas',
-  ServerPort.Config in 'src\configs\ServerPort.Config.pas',
+  Connection.Redis in 'src\connection\Connection.Redis.pas',
+  Config.Database in 'src\configs\Config.Database.pas',
+  Config.Redis in 'src\configs\Config.Redis.pas',
+  Config.ServerPort in 'src\configs\Config.ServerPort.pas',
   Horse.OAuth2.Singleton in 'src\oauth2\Horse.OAuth2.Singleton.pas',
   OAuth2.Repository.Client in 'src\oauth2\repositories\OAuth2.Repository.Client.pas',
   OAuth2.Repository.AccessToken in 'src\oauth2\repositories\OAuth2.Repository.AccessToken.pas',
@@ -39,7 +39,7 @@ uses
   OAuth2.Middleware.AuthorizationServer in 'src\oauth2\middlewares\OAuth2.Middleware.AuthorizationServer.pas',
   OAuth2.Repository.User in 'src\oauth2\repositories\OAuth2.Repository.User.pas',
   OAuth2.Service.Client in 'src\oauth2\services\OAuth2.Service.Client.pas',
-  FireDAC.Connection.PoolManager in 'src\connection\FireDAC.Connection.PoolManager.pas',
+  Connection.FireDAC.PoolManager in 'src\connection\Connection.FireDAC.PoolManager.pas',
   OAuth2.Service.User in 'src\oauth2\services\OAuth2.Service.User.pas',
   OAuth2.Service.Scope in 'src\oauth2\services\OAuth2.Service.Scope.pas',
   OAuth2.Service.Token in 'src\oauth2\services\OAuth2.Service.Token.pas',
@@ -55,7 +55,8 @@ uses
   OAuth2.Config.Server in 'src\oauth2\configs\OAuth2.Config.Server.pas',
   OAuth2.Config.LoginProxy in 'src\oauth2\configs\OAuth2.Config.LoginProxy.pas',
   Horse.HealthCheck.Database in 'src\health-checkers\Horse.HealthCheck.Database.pas',
-  Horse.HealthCheck.Redis in 'src\health-checkers\Horse.HealthCheck.Redis.pas';
+  Horse.HealthCheck.Redis in 'src\health-checkers\Horse.HealthCheck.Redis.pas',
+  OAuth2.Config.Introspect in 'src\oauth2\configs\OAuth2.Config.Introspect.pas';
 
 begin
   TDataSetSerializeConfig.GetInstance.CaseNameDefinition := cndLower;
@@ -82,7 +83,7 @@ begin
 
   THorseOAuth2Routers.Register;
 
-  THorse.Listen(TServerPortConfig.Port,
+  THorse.Listen(9000,
     procedure(AHorse: THorse)
     begin
       WriteLn(Format(sServerIsRunning, [THorse.Host, THorse.Port]));

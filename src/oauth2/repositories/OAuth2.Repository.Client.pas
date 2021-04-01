@@ -43,7 +43,7 @@ begin
     if (LRecord <> nil) then
     begin
       Result := TOAuth2ClientEntity.New(
-        LRecord.FieldByName('id').AsString.Trim(['{', '}']),
+        LRecord.FieldByName('id').AsString,
         LRecord.FieldByName('name').AsString,
         LRecord.FieldByName('redirect').AsString.Split([';']),
         not LRecord.FieldByName('secret').AsString.IsEmpty

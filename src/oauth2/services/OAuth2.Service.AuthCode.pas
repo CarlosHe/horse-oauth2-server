@@ -36,7 +36,7 @@ uses
   FireDAC.Comp.DataSet,
   FireDAC.Comp.Client,
   Ragna,
-  FireDAC.Connection.PoolManager,
+  Connection.FireDAC.PoolManager,
   System.SysUtils;
 
 { TOAuth2AuthCodeService }

@@ -43,7 +43,7 @@ uses
   FireDAC.Comp.Client,
   Ragna,
   BCrypt,
-  FireDAC.Connection.PoolManager,
+  Connection.FireDAC.PoolManager,
   System.Hash,
   System.SysUtils;
 

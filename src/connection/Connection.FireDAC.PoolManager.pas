@@ -1,4 +1,4 @@
-unit FireDAC.Connection.PoolManager;
+unit Connection.FireDAC.PoolManager;
 
 interface
 
@@ -46,7 +46,7 @@ type
 implementation
 
 uses
-  Database.Config,
+  Config.Database,
   System.SyncObjs;
 
 { TFDConnectionPoolManager }

@@ -45,7 +45,7 @@ begin
     raise EHorseCallbackInterrupted.Create;
   end;
 
-  LClientId := Format('{%s}', [AReq.Params['client_id'].Trim(['{', '}'])]);
+  LClientId := AReq.Params['client_id'].Trim;
 
   LRecord := TOAuth2ClientService.FindForUser(LClientId, AReq.Session<TJSONObject>.GetValue<string>('sub'));
   try
@@ -140,7 +140,7 @@ begin
   end
   else
   begin
-    LClientId := Format('{%s}', [AReq.Params['client_id'].Trim(['{', '}'])]);
+    LClientId := AReq.Params['client_id'].Trim;
     LRecord := TOAuth2ClientService.FindForUser(LClientId, AReq.Session<TJSONObject>.GetValue<string>('sub'));
     try
       if LRecord = nil then

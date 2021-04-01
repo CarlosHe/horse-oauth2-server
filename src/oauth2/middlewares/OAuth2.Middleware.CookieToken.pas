@@ -144,7 +144,7 @@ begin
   except
     LAuthToken := THash.GetRandomString(16);
     LSessionKey := TOAuth2RedisSessionProvider.NewSession;
-    LRedirectUri := '/oauth/login?next=' + GetNextUri(AReq);
+    LRedirectUri := '/oauth2/login?next=' + GetNextUri(AReq);
     LSessionValue := TJSONObject.Create;
     try
       LSessionValue.AddPair('redirect_uri', LRedirectUri);
